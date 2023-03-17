@@ -1,8 +1,12 @@
-const baseUrl = "http://localhost:8000";
+const baseUrl = "https://deno-fresh-shop.deno.dev";
 export const Get = async (
   path: string,
 ) => {
-  const response = await fetch(`${baseUrl}/api/${path}`);
+  const response = await fetch(`${baseUrl}/api/${path}`, {
+    headers: {
+      Origin: "*",
+    },
+  });
   return response;
 };
 export const Post = async (path: string, body?: BodyInit | null) => {

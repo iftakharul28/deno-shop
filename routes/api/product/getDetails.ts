@@ -6,7 +6,7 @@ export const handler = async (
 ) => {
   const u = new URL(_req.url);
   const res = await fetch(
-    `${Deno.env.get("FRESH_APP_URL")}/product/details?product_code=${
+    `${Deno.env.get("API_URL")}/product/details?product_code=${
       u.searchParams.get("slug")
     }&source=1688`,
     {
