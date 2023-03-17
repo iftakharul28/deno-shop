@@ -1,0 +1,100 @@
+export type ProductType = {
+  product_code: string;
+  name: string;
+  img: string;
+  regular_price: number;
+  sale_price: number;
+  stock: number;
+  rating: number;
+  total_sold: number;
+  seller_code: string;
+  category_code: string;
+  source: string;
+  views: number;
+  order_count: number | null;
+};
+export type LinksType = {
+  first: string | null;
+  last: string | null;
+  prev: string | null;
+  next: string | null;
+};
+export type MetaType = {
+  current_page: number;
+  from: number;
+  last_page: number;
+  links: {
+    url: string | null;
+    label: string | null;
+    active: boolean;
+  }[];
+  path: string;
+  per_page: number;
+  to: number;
+  total: number;
+};
+export type SearchType = {
+  id: number;
+  key: string;
+  page: number;
+  error: number;
+  source: string;
+  country: string;
+  results: ProductType[];
+  per_page: number;
+  date_modified: Date;
+  total_products: number;
+  relevant_category_id: string | null;
+  created_at: Date;
+  updated_at: Date;
+};
+export type ProductPropsType = {
+  data: ProductType[];
+  meta: MetaType;
+  links: LinksType;
+};
+export type ProductCategoryType = {
+  id: number;
+  source: string;
+  name: string;
+  category_code: string;
+  parent_id: string;
+  description: string | null;
+  created_at: Date;
+  updated_at: Date;
+  wsc_seller_id: string | null;
+};
+export type ProductSellerType = {
+  id: number;
+  source: string;
+  name: string;
+  translated_name: string | null;
+  seller_code: string;
+  seller_url: string;
+  review: string;
+  created_at: Date;
+  updated_at: Date;
+};
+export type ProductDetailsType = {
+  error: number;
+  id: number;
+  product_code: string;
+  title: string;
+  image: string;
+  source: string;
+  source_url: string;
+  country: string;
+  regular_price: number;
+  sale_price: number;
+  total_sold: number;
+  views: number;
+  category: ProductCategoryType;
+  seller: ProductSellerType;
+  weight: string;
+  verified_weight: string | null;
+  auto_update: number;
+  product_specification: string | null;
+  product_description: string | null;
+  created_at: Date;
+  updated_at: Date;
+};
