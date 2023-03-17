@@ -1,9 +1,9 @@
-const baseUrl = "https://deno-fresh-shop.deno.dev";
+const baseUrl = "https://iftakharul28-deno-shop.deno.dev";
 export const Get = async (
   path: string,
 ) => {
   const response = await fetch(`${baseUrl}/api/${path}`, {
-    headers: { "Access-Control-Allow-Origin": "*" },
+    headers: { "Access-Control-Allow-Origin": "*", Accept: "*/*" },
   });
   return response;
 };
