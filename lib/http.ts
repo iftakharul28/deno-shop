@@ -5,6 +5,7 @@ export const Get = async (
   const response = await fetch(`${baseUrl}/api/${path}`, {
     headers: {
       Origin: "*",
+      "Access-Control-Allow-Origin": "*",
     },
   });
   return response;
