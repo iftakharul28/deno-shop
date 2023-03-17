@@ -3,10 +3,7 @@ export const Get = async (
   path: string,
 ) => {
   const response = await fetch(`${baseUrl}/api/${path}`, {
-    headers: {
-      Origin: "*",
-      "Access-Control-Allow-Origin": "*",
-    },
+    headers: { "Access-Control-Allow-Origin": "*" },
   });
   return response;
 };
